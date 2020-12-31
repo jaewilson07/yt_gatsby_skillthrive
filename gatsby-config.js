@@ -43,6 +43,16 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Roboto\:300,400, 400i,500,700i`,
+          `Poppins\:300,400,400i,500,600,700i`,
+        ],
+        display: "swap",
+      },
+    },
 
     // `gatsby-plugin-react-helmet`,
     // {
