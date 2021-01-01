@@ -1,3 +1,11 @@
 import React from "react"
 
-export default () => <div>Hello World</div>
+import { Container } from "../components/Container"
+
+const IndexPage = () => (
+  <Container>
+    <h1>Hello World</h1>
+  </Container>
+)
+
+export default IndexPage
