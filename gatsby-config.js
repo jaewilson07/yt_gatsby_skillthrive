@@ -43,6 +43,8 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-styled-components`,
+
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
