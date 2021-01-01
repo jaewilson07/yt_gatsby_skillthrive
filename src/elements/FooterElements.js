@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { testColor } from "../elements"
 
 export const FooterWrapper = styled.footer`
   grid-column: 2 / span 12;
@@ -29,7 +30,7 @@ export const FooterSocialWrapper = styled.div`
 
 export const FooterSocialIcons = styled.div`
   flex: 0 0 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 
   & svg {
     margin: 0 1rem;
@@ -43,5 +44,6 @@ export const FooterSocialIcons = styled.div`
 `
 
 export const StyledSocialIcons = styled(FontAwesomeIcon)`
-  color: ${({ theme }) => theme.colors.main1};
+  color: ${props =>
+    props.color ? testColor(props) : props.theme.colors.main1};
 `
