@@ -1,7 +1,10 @@
 import React from "react"
+import { FeatureImage, Container } from "../components"
 
-import { Container } from "../components/Container"
-
-const IndexPage = () => <Container></Container>
+const IndexPage = () => (
+  <Container>
+    <FeatureImage />
+  </Container>
+)
 
 export default IndexPage
