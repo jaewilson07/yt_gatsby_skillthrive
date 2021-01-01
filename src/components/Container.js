@@ -1,7 +1,11 @@
 import React from "react"
 
-import { ContainerWrapper } from "../elements/ContainerElements"
+import { ContainerWrapper } from "../elements"
+import { Nav } from "../components"
 
 export const Container = ({ children }) => (
-  <ContainerWrapper>{children}</ContainerWrapper>
+  <ContainerWrapper>
+    <Nav />
+    {children}
+  </ContainerWrapper>
 )
