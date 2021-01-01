@@ -5,14 +5,6 @@
  */
 
 // You can delete this file if you're not using it
-import React from "react"
+import { wrapRootElement as wrap } from "./root-wrapper"
 
-import { ThemeProvider } from "styled-components"
-
-import Theme from "./src/themes/theme"
-
-export const wrapRootElement = ({ element, props }) => (
-  <ThemeProvider theme={Theme} {...props}>
-    {element}
-  </ThemeProvider>
-)
+export const wrapRootElement = wrap

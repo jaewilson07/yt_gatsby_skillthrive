@@ -2,15 +2,6 @@
  * Implement Gatsby's Browser APIs in this file.
  * See: https://www.gatsbyjs.com/docs/browser-apis/
  */
+import { wrapRootElement as wrap } from "./root-wrapper"
 
-import React from "react"
-
-import { ThemeProvider } from "styled-components"
-
-import Theme from "./src/themes/theme"
-
-export const wrapRootElement = ({ element, props }) => (
-  <ThemeProvider theme={Theme} {...props}>
-    {element}
-  </ThemeProvider>
-)
+export const wrapRootElement = wrap
