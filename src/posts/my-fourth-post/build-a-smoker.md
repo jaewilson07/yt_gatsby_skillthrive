@@ -2,7 +2,7 @@
 title: "Build a Smoker"
 featureImage: "194296d65605baac880092f94310b18c7923e934.png"
 slug: "build a smoker"
-date: 2019-01-01
+date: 2020-03-15
 ---
 
 Water Tank

@@ -1,4 +1,5 @@
 ---
 title: "Home Brewery"
-slug: "My Second Post"
+slug: "/homebrewery"
+date: "2020-01-01
 ---
