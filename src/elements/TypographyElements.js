@@ -70,7 +70,7 @@ export const P = styled.p`
 `
 
 export const H1 = styled.h1`
-  font-size: 2.25rem;
+  font-size: ${props => (props.fontSize ? props.fontSize : "2.25rem")};
   line-height: 2.5rem;
   font-weight: 400;
 
