@@ -1,6 +1,7 @@
 export * from "./Container"
 export * from "./Nav"
 export * from "./Footer"
+export * from "./Seo"
 
 export * from "./FeatureImage"
 export * from "./Button"

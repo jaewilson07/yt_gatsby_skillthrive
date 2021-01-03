@@ -8,6 +8,8 @@ const { createFilePath } = require("gatsby-source-filesystem")
 
 const POST_PER_PAGE = 3
 
+const { BASE_URL } = require("./src/config")
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(`
     query {
@@ -35,7 +37,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   Array.from({ length: numPages }).forEach((_, index) => {
     actions.createPage({
-      path: index === 0 ? `/blog` : `/blog/${index + 1}`,
+      path: index === 0 ? BASE_URL : `${BASE_URL}/${index + 1}`,
       component: require.resolve("./src/templates/allPosts.js"),
       context: {
         limit: POST_PER_PAGE,
@@ -48,10 +50,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // create single posts
   posts.forEach((post, index) => {
-    const slug = post.node.frontmatter.slug
+    const slug = `${BASE_URL}${post.node.frontmatter.slug}`
     const id = post.node.id
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
+
+    console.log(slug)
 
     actions.createPage({
       path: slug,

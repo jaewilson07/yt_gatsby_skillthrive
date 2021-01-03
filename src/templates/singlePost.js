@@ -4,18 +4,28 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import { H1 } from "../elements"
 
-import { Container, Post, FeatureImage } from "../components"
+import { Container, Post, FeatureImage, Seo } from "../components"
 
 const singlePost = ({ data }) => {
+  const frontmatter = data.mdx.frontmatter
+
   const featureImage =
-    data.mdx.frontmatter.featureImage &&
-    data.mdx.frontmatter.featureImage.childImageSharp.fixed
+    frontmatter.featureImage && frontmatter.featureImage.childImageSharp.fixed
+
+  const seoImage =
+    frontmatter.featureImage && frontmatter.featureImage.publicURL
 
   return (
     <Container>
+      <Seo
+        title={frontmatter.title}
+        image={seoImage}
+        description={frontmatter.excerpt}
+        keywords={frontmatter.tags ? frontmatter.tags.split(", ") : []}
+      />
       {featureImage && <FeatureImage fixed={featureImage} />}
       <Post>
-        <H1 margin="0 0 2rem 0">{data.mdx.frontmatter.title}</H1>
+        <H1 margin="0 0 2rem 0">{frontmatter.title}</H1>
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </Post>
     </Container>
@@ -33,7 +43,9 @@ export const pageQuery = graphql`
         excerpt
         slug
         title
+        tags
         featureImage {
+          publicURL
           childImageSharp {
             fixed {
               ...GatsbyImageSharpFixed

@@ -167,6 +167,15 @@ export const PostWrapper = styled.main`
     padding: .5rem;
   }
 
+  img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    padding: 1rem 1rem;
+
+    
+  }
+
   @media ${({ theme }) => theme.breakpoints.tablet} {
     grid-column: 2 / span 6;
   }

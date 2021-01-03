@@ -1,8 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Onyx Reporting Blog`,
+    description: `Learn best practices and design patterns from Domo and Jet Reports consultant Jae Myong Wilson`,
+    author: `@onyxreporting`,
+    url: "http://www.onyxreporting.com",
+    image: "/logo.svg",
+    twitterUsername: "@jaewo1r",
   },
   plugins: [
     {
@@ -30,19 +33,14 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [`.md`, `.mdx`],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1200,
-            },
-          },
-        ],
+        gatsbyRemarkPlugins: [`gatsby-remark-images`],
+        plugins: [`gatsby-remark-images`],
       },
     },
+
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {

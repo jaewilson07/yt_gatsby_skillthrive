@@ -1,12 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import { BASE_URL } from "../config"
 import {
   Container,
   Content,
   ContentCard,
   FeatureImage,
   Pagination,
+  Seo,
 } from "../components"
 
 import { H1, P } from "../elements"
@@ -24,6 +26,7 @@ const allPosts = ({ pageContext, data }) => {
 
   return (
     <Container>
+      <Seo />
       <FeatureImage />
       <Content>
         <H1 textAlign="center" margin="0 0 1rem 0">
@@ -38,7 +41,7 @@ const allPosts = ({ pageContext, data }) => {
             date={post.node.frontmatter.date}
             title={post.node.frontmatter.title}
             excerpt={post.node.frontmatter.excerpt}
-            slug={post.node.frontmatter.slug}
+            slug={`${BASE_URL}${post.node.frontmatter.slug}`}
           />
         ))}
       </Content>
