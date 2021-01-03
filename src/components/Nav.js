@@ -13,7 +13,7 @@ export const Nav = () => {
   `)
   return (
     <NavWrapper>
-      <Link to="/">
+      <Link to="http://www.onyxreporting.com">
         <NavImage src={data.logo.publicURL} alt="Onyx Logo" />
       </Link>
     </NavWrapper>

@@ -74,6 +74,7 @@ export const PostWrapper = styled.main`
     font-weight: 400;
     color: ${({ theme }) => theme.colors.dark2};
     margin-top: 2rem;
+    overflow-wrap: break-word;
   }
 
   a {
@@ -171,9 +172,7 @@ export const PostWrapper = styled.main`
     display: block;
     margin: auto;
     max-width: 100%;
-    padding: 1rem 1rem;
-
-    
+    padding: 1rem 1rem;    
   }
 
   @media ${({ theme }) => theme.breakpoints.tablet} {

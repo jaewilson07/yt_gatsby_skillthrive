@@ -18,13 +18,21 @@ export const Footer = () => (
   <FooterWrapper>
     <FooterSocialWrapper>
       <FooterSocialIcons>
-        <a href="youtube.com" target="_blank" alt="YouTube Link">
+        <a
+          href="https://www.youtube.com/c/onyxreporting2"
+          target="_blank"
+          alt="YouTube Link"
+        >
           <StyledSocialIcons icon={faYoutube} size="2x" color="main1" />
         </a>
-        <a href="linkedin.com" target="_blank" alt="LinkedIn Link">
+        <a
+          href="https://www.linkedin.com/in/jaewor/"
+          target="_blank"
+          alt="LinkedIn Link"
+        >
           <StyledSocialIcons icon={faLinkedin} size="2x" color="main1" />
         </a>
-        <a href="twitter.com" target="_blank" alt="Twitter Link">
+        <a href="https://twitter.com/jaewor" target="_blank" alt="Twitter Link">
           <StyledSocialIcons icon={faTwitter} size="2x" color="main1" />
         </a>
       </FooterSocialIcons>
