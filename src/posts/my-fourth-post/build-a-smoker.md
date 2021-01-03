@@ -1,7 +1,7 @@
 ---
 title: "Build a Smoker"
 featureImage: "194296d65605baac880092f94310b18c7923e934.png"
-slug: "build a smoker"
+slug: "/build-a-smoker4"
 date: 2020-03-15
 ---
 
