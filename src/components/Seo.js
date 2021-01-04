@@ -27,6 +27,9 @@ export const Seo = ({ description, keywords, title, image, url, author }) => (
         <Helmet
           title={title}
           meta={[
+            { name: `description`, content: metaDescription },
+            { property: `og:title`, content: metaTitle },
+            { property: `og:description`, content: metaDescription },
             { property: `og:type`, content: `website` },
             { property: `og:image`, content: metaImage },
             { property: `og:url`, content: metaUrl },

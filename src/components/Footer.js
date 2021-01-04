@@ -22,6 +22,7 @@ export const Footer = () => (
           href="https://www.youtube.com/c/onyxreporting2"
           target="_blank"
           alt="YouTube Link"
+          rel="noreferrer"
         >
           <StyledSocialIcons icon={faYoutube} size="2x" color="main1" />
         </a>
@@ -29,10 +30,16 @@ export const Footer = () => (
           href="https://www.linkedin.com/in/jaewor/"
           target="_blank"
           alt="LinkedIn Link"
+          rel="noreferrer"
         >
           <StyledSocialIcons icon={faLinkedin} size="2x" color="main1" />
         </a>
-        <a href="https://twitter.com/jaewor" target="_blank" alt="Twitter Link">
+        <a
+          href="https://twitter.com/jaewor"
+          target="_blank"
+          alt="Twitter Link"
+          rel="noreferrer"
+        >
           <StyledSocialIcons icon={faTwitter} size="2x" color="main1" />
         </a>
       </FooterSocialIcons>
