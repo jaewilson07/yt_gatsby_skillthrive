@@ -9,7 +9,7 @@ import {
   RightSideBarWrapper,
 } from "../elements"
 
-export const Container = ({ items, children }) => {
+export const Container = ({ items, children, title }) => {
   console.log(items, children)
   return (
     <ContainerWrapper>
@@ -21,7 +21,7 @@ export const Container = ({ items, children }) => {
         <Content>{children}</Content>
       </ContentWidthWrapper>
       <RightSideBarWrapper className={"hiddenMobile"}>
-        <RightSidebar items={items} />
+        <RightSidebar items={items} title={title} />
       </RightSideBarWrapper>
     </ContainerWrapper>
   )

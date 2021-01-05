@@ -12,7 +12,7 @@ const singlePost = ({ data }) => {
     frontmatter.featureImage && frontmatter.featureImage.publicURL
 
   return (
-    <Container items={data.mdx.tableOfContents.items}>
+    <Container items={data.mdx.tableOfContents.items} title={frontmatter.title}>
       <Seo
         title={frontmatter.title}
         image={seoImage}

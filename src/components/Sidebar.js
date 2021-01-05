@@ -19,11 +19,11 @@ export const Sidebar = () => (
   </SidebarWrapper>
 )
 
-export const RightSidebar = ({ items }) => {
+export const RightSidebar = ({ items, title }) => {
   console.log(items)
   return items && items.length > 0 ? (
     <SidebarWrapper>
-      <TableOfContents items={items} />
+      <TableOfContents items={items} title={title} />
     </SidebarWrapper>
   ) : (
     <SidebarWrapper>
