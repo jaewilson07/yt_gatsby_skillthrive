@@ -9,7 +9,7 @@ import {
   FeatureImage,
   Pagination,
   Seo,
-} from "../components"
+} from "../components/"
 
 import { H1, P } from "../elements"
 

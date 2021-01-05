@@ -1,17 +1,6 @@
 import styled from "styled-components"
 
 export const PostWrapper = styled.main`
-  grid-column: 4 / span 8;
-  grid-row: 3 / span 5;
-
-  background-color: ${({ theme }) => theme.colors.light2};
-  z-index: 10;
-
-  padding: ${({ theme }) =>
-    `${theme.spacings.xLarge} ${theme.spacings.xxLarge}`};
-
-  box-shadow: ${({ theme }) => theme.shadows.shadow1};
-
   h1,
   h2,
   h3,
@@ -82,6 +71,7 @@ export const PostWrapper = styled.main`
     text-decoration: underline;
 
     &:hover {
+      transition: color 0.15s;
       background: linear-gradient(#eee, #eee);
       background-repeat: no-repeat;
     }
@@ -173,10 +163,6 @@ export const PostWrapper = styled.main`
     margin: auto;
     max-width: 100%;
     padding: 1rem 1rem;    
-  }
-
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    grid-column: 2 / span 6;
   }
 
   @media ${({ theme }) => theme.breakpoints.mobile} {

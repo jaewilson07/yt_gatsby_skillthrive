@@ -2,37 +2,23 @@ import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
+import { Container, Seo, Post } from "../components"
 import { H1 } from "../elements"
-
-import {
-  Container,
-  FeatureImage,
-  Seo,
-  TableOfContents,
-  Post,
-} from "../components/"
 
 const singlePost = ({ data }) => {
   const frontmatter = data.mdx.frontmatter
-
-  const featureImage =
-    frontmatter.featureImage && frontmatter.featureImage.childImageSharp.fixed
 
   const seoImage =
     frontmatter.featureImage && frontmatter.featureImage.publicURL
 
   return (
-    <Container>
+    <Container items={data.mdx.tableOfContents.items}>
       <Seo
         title={frontmatter.title}
         image={seoImage}
         description={frontmatter.excerpt}
         keywords={frontmatter.tags ? frontmatter.tags.split(", ") : []}
       />
-      {featureImage && <FeatureImage fixed={featureImage} />}
-      {data.mdx?.tableOfContents?.items && (
-        <TableOfContents items={data.mdx.tableOfContents.items} />
-      )}
       <Post>
         <H1 margin="0 0 2rem 0">{frontmatter.title}</H1>
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
@@ -44,7 +30,7 @@ const singlePost = ({ data }) => {
 export default singlePost
 
 export const pageQuery = graphql`
-  query SinglePostQuery_Orig($id: String!) {
+  query SinglePostQuery($id: String!) {
     mdx(id: { eq: $id }) {
       body
       tableOfContents

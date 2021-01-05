@@ -1,19 +1,28 @@
 import styled from "styled-components"
 
-export const ContainerWrapper = styled.div`
-  height: 100%;
-
-  display: grid;
-  grid-template-columns: 1fr repeat(12, minmax(auto, 4.2rem)) 1fr;
-  grid-template-rows: 7.8rem 20rem 5rem auto;
-  gap: 0 2rem;
-
-  @media ${({ theme }) => theme.breakpoints.tablet} {
-    grid-template-columns: 2rem repeat(6, 1fr) 2rem;
-    grid-gap: 0, 1rem;
+export const ContainerWrapper = styled("div")`
+  display: flex;
+  justify-content: space-between;
+  background: ${({ theme }) => theme.colors.background};
   }
 
-  @media ${({ theme }) => theme.breakpoints.mobile} {
-    grid-template-columns: 1rem repeat(6, 1fr) 1rem;
+  @media only screen and (max-width: 767px) {
+    display: block;
   }
+`
+
+export const ContentWidthWrapper = styled("div")`
+  @media only screen and (max-width: 50rem) {
+    max-width: 750px;
+    position: relative;
+    flex: 1 0 auto;
+  }
+`
+
+export const LeftSideBarWrapper = styled("div")`
+  flex: 1 0 298px;
+`
+
+export const RightSideBarWrapper = styled("div")`
+  flex: 1 0 224px;
 `
