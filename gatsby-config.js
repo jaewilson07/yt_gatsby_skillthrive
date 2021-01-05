@@ -47,7 +47,7 @@ module.exports = {
             resolve: "gatsby-remark-copy-linked-files",
           },
           {
-            resolve: `remark-slug`,
+            resolve: `gatsby-remark-slug`,
           },
         ],
       },
