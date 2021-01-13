@@ -4,7 +4,7 @@ import styled from "styled-components"
 export const SidebarWrapper = styled("aside")`
   flex-shrink: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: auto;
   position: fixed;
   padding-top: 0px;

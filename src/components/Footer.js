@@ -7,7 +7,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 
 import {
-  FooterWrapper,
   FooterSocialWrapper,
   FooterSocialIcons,
   StyledSocialIcons,
@@ -15,7 +14,7 @@ import {
 } from "../elements"
 
 export const Footer = () => (
-  <FooterWrapper>
+  <React.Fragment>
     <FooterSocialWrapper>
       <FooterSocialIcons>
         <a
@@ -47,5 +46,5 @@ export const Footer = () => (
         © 2020 Onyx Reporting. All rights reserved.
       </P>
     </FooterSocialWrapper>
-  </FooterWrapper>
+  </React.Fragment>
 )

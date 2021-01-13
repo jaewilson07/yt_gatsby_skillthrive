@@ -3,13 +3,13 @@ import { graphql } from "gatsby"
 
 import { BASE_URL } from "../config"
 import {
-  Container,
-  Content,
+  Layout,
+  ListingContainer,
   ContentCard,
   FeatureImage,
   Pagination,
   Seo,
-} from "../components/"
+} from "../components"
 
 import { H1, P } from "../elements"
 
@@ -25,10 +25,10 @@ const allPosts = ({ pageContext, data }) => {
   const posts = data.allMdx.edges
 
   return (
-    <Container>
-      <Seo />
-      <FeatureImage />
-      <Content>
+    <Layout>
+      <ListingContainer>
+        <FeatureImage />
+        <Seo />
         <H1 textAlign="center" margin="0 0 1rem 0">
           hello world this is a test
         </H1>
@@ -44,14 +44,14 @@ const allPosts = ({ pageContext, data }) => {
             slug={`${BASE_URL}${post.node.frontmatter.slug}`}
           />
         ))}
-      </Content>
-      <Pagination
-        isFirst={isFirst}
-        isLast={isLast}
-        prevPage={prevPage}
-        nextPage={nextPage}
-      />
-    </Container>
+        <Pagination
+          isFirst={isFirst}
+          isLast={isLast}
+          prevPage={prevPage}
+          nextPage={nextPage}
+        />
+      </ListingContainer>
+    </Layout>
   )
 }
 

@@ -1,12 +1,23 @@
+const config = require("./src/config")
+
 module.exports = {
   siteMetadata: {
-    title: `Onyx Reporting Blog`,
-    description: `Learn best practices and design patterns from Domo and Jet Reports consultant Jae Myong Wilson`,
-    author: `@onyxreporting`,
-    url: "http://www.onyxreporting.com",
-    image: "/logo.svg",
-    twitterUsername: "@jaewo1r",
+    title: config.siteMetadata.title,
+    description: config.siteMetadata.description,
+    author: config.siteMetadata.author,
+    url: config.siteMetadata.url,
+    image: config.siteMetadata.image,
+
+    twitterUsername: config.social.twitterUsername,
+
+    githubUrl: config.header.githubUrl,
+    helpUrl: config.header.helpUrl,
+
+    favicon: config.siteMetadata.favicon,
+
+    navbar: config.headerNav,
   },
+
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
