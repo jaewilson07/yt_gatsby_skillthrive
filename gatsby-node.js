@@ -6,9 +6,7 @@
 const path = require("path")
 const { createFilePath } = require("gatsby-source-filesystem")
 
-const POST_PER_PAGE = 3
-
-const { BASE_URL } = require("./src/config")
+const { BASE_URL, POST_PER_PAGE } = require("./src/config")
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(`

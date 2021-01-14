@@ -1,5 +1,12 @@
 module.exports = {
   BASE_URL: "/blog",
+
+  POST_PER_PAGE: 3,
+  IGNORE_INDEX: false,
+  GATSBY_TRAILINGSLASH: false,
+  GATSBY_PATHPREFIX: "/",
+  SIDEBAR_FRONTLINE: false,
+
   siteMetadata: {
     title: "Onyx Reporting Blog",
     description:
