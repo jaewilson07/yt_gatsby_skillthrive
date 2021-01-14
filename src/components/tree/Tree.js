@@ -151,7 +151,10 @@ const useStickyState = (key = "sticky", initialState = null) => {
   return [state, setState, clearState]
 }
 
+/// ************************************************************ ///
 export const Tree = ({ edges }) => {
+  console.log("edges in tree", edges)
+
   let [treeData] = useState(() => {
     return calculateTreeData(edges)
   })

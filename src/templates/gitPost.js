@@ -16,6 +16,7 @@ const singlePost = ({ data }) => {
       <PostContainer
         items={data.mdx.tableOfContents.items}
         title={frontmatter.title}
+        edges={data.allMdx.edges}
       >
         <Seo
           title={frontmatter.title}
@@ -51,6 +52,26 @@ export const pageQuery = graphql`
             fixed {
               ...GatsbyImageSharpFixed
             }
+          }
+        }
+      }
+    }
+
+    site {
+      siteMetadata {
+        title
+      }
+    }
+
+    allMdx {
+      edges {
+        node {
+          fields {
+            slug
+          }
+
+          frontmatter {
+            title
           }
         }
       }

@@ -1,26 +1,29 @@
 import React from "react"
 
 // import Link from './link';
-import { TableOfContents } from "../components"
+import { TableOfContents, Tree } from "../components"
 import { SidebarWrapper } from "../elements"
 
 const SIDEBAR_TITLE = "My Blog"
 
-export const Sidebar = () => (
-  <SidebarWrapper>
-    {SIDEBAR_TITLE ? (
+export const Sidebar = ({ edges }) => {
+  console.log(edges)
+
+  return (
+    <SidebarWrapper>
       <div
         className={"sidebarTitle hiddenMobile"}
         dangerouslySetInnerHTML={{ __html: SIDEBAR_TITLE }}
       />
-    ) : (
-      <div />
-    )}
-  </SidebarWrapper>
-)
+
+      <Tree edges={edges} />
+    </SidebarWrapper>
+  )
+}
 
 export const RightSidebar = ({ items, title }) => {
   console.log(items)
+
   return items && items.length > 0 ? (
     <SidebarWrapper>
       <TableOfContents items={items} title={title} />

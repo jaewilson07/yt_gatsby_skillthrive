@@ -32,12 +32,12 @@ export const RightSideBarWrapper = styled("div")`
   flex: 1 0 224px;
 `
 
-export const PostContainer = ({ items, children, title }) => {
-  console.log(items, children)
+export const PostContainer = ({ items, children, title, edges }) => {
+  console.log(items, children, edges)
   return (
     <PostContainerWrapper>
       <LeftSideBarWrapper className={"hiddenMobile"}>
-        <Sidebar />
+        <Sidebar edges={edges} />
       </LeftSideBarWrapper>
 
       <ContentWidthWrapper>
