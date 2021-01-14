@@ -23,3 +23,4 @@ export * from "./Content"
 export * from "./ContentCard"
 
 export * from "./Sidebar"
+export * from "./tree/Tree"
