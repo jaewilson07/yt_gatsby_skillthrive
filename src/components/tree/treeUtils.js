@@ -47,12 +47,6 @@ export const calculateTreeData = edges => {
             return label === part
           })
 
-        console.log({
-          parent: tmp,
-          prevItem: prevItems,
-          currentPart: part,
-          parent_page,
-        })
         if (tmp) {
           if (!tmp.items) {
             tmp.items = []

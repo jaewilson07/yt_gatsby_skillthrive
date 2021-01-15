@@ -27,7 +27,6 @@ const TreeNode = ({
   ...rest
 }) => {
   const isCollapsed = collapsed[url]
-
   const hasChildren = items.length !== 0
 
   let location
@@ -42,7 +41,7 @@ const TreeNode = ({
 
   return (
     <li className={calculatedClassName}>
-      {title && (
+      {title && url && (
         <Link to={url}>
           {url}
           {!SIDEBAR_FRONTLINE && title && hasChildren ? (

@@ -4,7 +4,7 @@ import styled from "styled-components"
 export const SidebarWrapper = styled("aside")`
   flex-shrink: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: auto;
   position: fixed;
   padding-top: 0px;
@@ -15,12 +15,36 @@ export const SidebarWrapper = styled("aside")`
   top: 0;
   -webkit-box-shadow: -1px 0px 4px 1px rgba(175, 158, 232, 0.4);
 
-  .sideBarUL li a {
-    color: ${({ theme }) => theme.colors.text};
+  .sideBarUL {
+    li a {
+      color: ${({ theme }) => theme.colors.text};
+    }
+    .item > a:hover {
+      color: #fff !important;
+    }
   }
 
-  .sideBarUL .item > a:hover {
-    color: #fff !important;
+  .showFrontLine {
+    .item > a:hover {
+      color: ${({ theme }) => theme.colors.dark2};
+    }
+    .active > a {
+      color: ${({ theme }) => theme.colors.dark1};
+      background-color: #001933;
+    }
+    .item .item {
+      border-left: 1px solid #e6ecf1;
+      border-left-color: rgb(230, 236, 241);
+      padding: 0;
+      width: calc(100% - 16px) !important;
+    }
+    .item .active > a {
+      border-color: rgb(230, 236, 241) !important;
+      border-style: solid none solid solid;
+      border-width: 1px 0px 1px 1px;
+      background-color: #1ed3c6 !important;
+      color: #fff;
+    }
   }
 
   .rightSideTitle {

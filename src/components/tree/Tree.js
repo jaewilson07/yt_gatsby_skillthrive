@@ -18,9 +18,12 @@ export const Tree = ({ edges }) => {
     defaultCollapsed[item.url] = true
   })
 
+  console.log(treeData)
+
   const [collapsed, setCollapsed] = useStickyState("collapse", defaultCollapsed)
 
   const toggle = url => {
+    console.log("click")
     setCollapsed({
       ...collapsed,
       [url]: !collapsed[url],
