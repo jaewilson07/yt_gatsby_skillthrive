@@ -33,7 +33,6 @@ export const RightSideBarWrapper = styled("div")`
 `
 
 export const PostContainer = ({ items, children, title, edges }) => {
-  console.log(items, children, edges)
   return (
     <PostContainerWrapper>
       <LeftSideBarWrapper className={"hiddenMobile"}>

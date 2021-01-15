@@ -16,7 +16,7 @@ export const Header = () => {
 
   return (
     <HeaderWrapper className="header">
-      <Link className="header__logo" to="http://www.onyxreporting.com">
+      <Link className="header__logo" to="/">
         <HeaderImage src={logo.publicURL} alt="Onyx Logo" />
       </Link>
       <Nav

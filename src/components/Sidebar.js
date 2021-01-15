@@ -7,15 +7,12 @@ import { SidebarWrapper } from "../elements"
 const SIDEBAR_TITLE = "My Blog"
 
 export const Sidebar = ({ edges }) => {
-  console.log(edges)
-
   return (
     <SidebarWrapper>
       <div
         className={"sidebarTitle hiddenMobile"}
         dangerouslySetInnerHTML={{ __html: SIDEBAR_TITLE }}
       />
-
       <Tree edges={edges} />
     </SidebarWrapper>
   )

@@ -1,7 +1,7 @@
 import React from "react"
 
 import { graphql } from "gatsby"
-import { PostContainer, Content, FeatureImage } from "../components"
+import { Content, FeatureImage, ListingContainer } from "../components"
 import { H1 } from "../elements"
 
 const notFound = ({ data }) => {
@@ -9,7 +9,7 @@ const notFound = ({ data }) => {
   const featureImage = data.imageSharp.fixed
 
   return (
-    <PostContainer>
+    <ListingContainer>
       <FeatureImage fixed={featureImage} />
       <Content>
         <H1 textAlign="center" margin="0 0 1rem 0" fontSize="1.5rem">
@@ -17,7 +17,7 @@ const notFound = ({ data }) => {
           But what you seek cannot be found
         </H1>
       </Content>
-    </PostContainer>
+    </ListingContainer>
   )
 }
 

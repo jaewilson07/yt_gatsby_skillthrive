@@ -68,6 +68,7 @@ export const pageQuery = graphql`
         node {
           fields {
             slug
+            parent_page
           }
 
           frontmatter {
