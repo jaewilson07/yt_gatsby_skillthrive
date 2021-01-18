@@ -8,22 +8,20 @@ import { SIDEBAR_FRONTLINE } from "../../config"
 export const Tree = ({ edges }) => {
   let [treeData] = useState(() => {
     const data = calculateTreeData(edges)
-    console.log("edges in tree", data)
     return data
   })
 
+  // set default collapsed for each URL to true
   const defaultCollapsed = {}
-
   treeData.items.forEach(item => {
     defaultCollapsed[item.url] = true
   })
 
-  console.log(treeData)
+  console.log(defaultCollapsed)
 
   const [collapsed, setCollapsed] = useStickyState("collapse", defaultCollapsed)
 
   const toggle = url => {
-    console.log("click")
     setCollapsed({
       ...collapsed,
       [url]: !collapsed[url],
@@ -35,7 +33,7 @@ export const Tree = ({ edges }) => {
       className={`${
         SIDEBAR_FRONTLINE ? "showFrontLine" : "hideFrontLine"
       } firstLevel`}
-      setCollapsed={toggle}
+      toggle={toggle}
       collapsed={collapsed}
       {...treeData}
     />

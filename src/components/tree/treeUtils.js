@@ -134,18 +134,21 @@ export const calculateTreeData = edges => {
   }, tree)
 }
 
-export const useStickyState = (key = "sticky", initialState = null) => {
-  const [state, setState] = useState(() => {
-    const storedState = localStorage.getItem(key)
+//https://www.joshwcomeau.com/react/persisting-react-state-in-localstorage/
+export const useStickyState = (key = "sticky", defaultValue = null) => {
+  const [value, setValue] = useState(() => {
+    const stickyValue = localStorage.getItem(key)
 
-    return storedState ?? initialState
+    const result = JSON.parse(stickyValue) ?? defaultValue
+    console.log(result, "the state", defaultValue, stickyValue, "the key", key)
+    return result
   })
 
   useEffect(() => {
-    localStorage.setItem(key, state)
-  }, [state])
+    localStorage.setItem(key, JSON.stringify(value))
+  }, [key, value])
 
   const clearState = () => localStorage.removeItem(key)
 
-  return [state, setState, clearState]
+  return [value, setValue, clearState]
 }

@@ -7,11 +7,9 @@ import isAbsoluteUrl from "is-absolute-url"
 
 import { SIDEBAR_FRONTLINE } from "../../config"
 
-const Link = ({ to, ...props }) => {
-  return isAbsoluteUrl(to) ? (
-    <a href={to} {...props}>
-      {props.children}
-    </a>
+const Link = ({ to, hasChildren, ...props }) => {
+  return hasChildren ? (
+    <a>{props.children}</a>
   ) : (
     <GatsbyLink to={to} {...props} />
   )
@@ -19,7 +17,7 @@ const Link = ({ to, ...props }) => {
 
 const TreeNode = ({
   className = "",
-  setCollapsed,
+  toggle,
   collapsed,
   url,
   title,
@@ -41,14 +39,12 @@ const TreeNode = ({
 
   return (
     <li className={calculatedClassName}>
-      {title && url && (
-        <Link to={url}>
+      {title && (
+        <Link to={url} hasChildren={hasChildren}>
           {url}
           {!SIDEBAR_FRONTLINE && title && hasChildren ? (
             <button
-              onClick={() => {
-                setCollapsed(url)
-              }}
+              onClick={() => toggle(url)}
               aria-label="collapse"
               className="collapser"
             >
@@ -63,7 +59,7 @@ const TreeNode = ({
           {items.map((item, index) => (
             <TreeNode
               key={item.url + index.toString()}
-              setCollapsed={setCollapsed}
+              toggle={toggle}
               collapsed={collapsed}
               {...item}
             />
