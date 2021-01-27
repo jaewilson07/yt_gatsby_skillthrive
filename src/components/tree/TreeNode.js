@@ -5,11 +5,17 @@ import ClosedSvg from "../../images/closed"
 import { Link as GatsbyLink } from "gatsby"
 import isAbsoluteUrl from "is-absolute-url"
 
-import { SIDEBAR_FRONTLINE } from "../../config"
+const Link = ({ to, ...props }) => {
+  // return hasChildren ? (
+  //   <a>{props.children}</a>
+  // ) : (
+  //   <GatsbyLink to={to} {...props} />
+  // )
 
-const Link = ({ to, hasChildren, ...props }) => {
-  return hasChildren ? (
-    <a>{props.children}</a>
+  return isAbsoluteUrl(to) ? (
+    <a href={to} {...props}>
+      {props.children}
+    </a>
   ) : (
     <GatsbyLink to={to} {...props} />
   )
@@ -39,21 +45,16 @@ const TreeNode = ({
 
   return (
     <li className={calculatedClassName}>
-      {title && (
-        <Link to={url} hasChildren={hasChildren}>
-          {url}
-          {!SIDEBAR_FRONTLINE && title && hasChildren ? (
-            <button
-              onClick={() => toggle(url)}
-              aria-label="collapse"
-              className="collapser"
-            >
-              {!isCollapsed ? <OpenedSvg /> : <ClosedSvg />}
-            </button>
-          ) : null}
-        </Link>
+      {url ? <Link to={url}>{title}</Link> : "My Blog"}
+      {hasChildren && (
+        <button
+          onClick={() => toggle(url)}
+          aria-label="collapse"
+          className="collapser"
+        >
+          {!isCollapsed ? <OpenedSvg /> : <ClosedSvg />}
+        </button>
       )}
-
       {!isCollapsed && hasChildren ? (
         <ul>
           {items.map((item, index) => (

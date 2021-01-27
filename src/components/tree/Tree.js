@@ -17,7 +17,7 @@ export const Tree = ({ edges }) => {
     defaultCollapsed[item.url] = true
   })
 
-  console.log(defaultCollapsed)
+  console.log(treeData, "tree data")
 
   const [collapsed, setCollapsed] = useStickyState("collapse", defaultCollapsed)
 

@@ -24,6 +24,23 @@ export const SidebarWrapper = styled("aside")`
     }
   }
 
+  .hideFrontLine {
+    .collapser {
+      background: transparent;
+      border: none;
+      outline: none;
+      position: absolute;
+      right: 20px;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .active > a {
+      background-color: #1ed3c6;
+      color: #fff !important;
+    }
+  }
+
   .showFrontLine {
     .item > a:hover {
       color: ${({ theme }) => theme.colors.dark2};

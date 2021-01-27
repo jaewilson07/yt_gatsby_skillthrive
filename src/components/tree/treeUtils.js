@@ -86,14 +86,18 @@ export const calculateTreeData = edges => {
 
   tmp.reverse()
 
-  return tmp.reduce((accu, slug) => {
+  const result = tmp.reduce((accu, slug) => {
     const parts = slug.split("/")
 
     let { items: prevItems } = accu
 
+    console.log(prevItems, "prev items")
+
     const slicedParts = GATSBY_TRAILINGSLASH
       ? parts.slice(1, -2)
       : parts.slice(1, -1)
+
+    console.log("sliced parts", slicedParts)
 
     slicedParts.forEach(part => {
       let tmp = prevItems.find(item => item && item.label === part)
@@ -106,6 +110,7 @@ export const calculateTreeData = edges => {
         tmp = { label: part, items: [] }
         prevItems.push(tmp)
       }
+
       if (tmp && tmp.items) {
         prevItems = tmp.items
       }
@@ -132,6 +137,8 @@ export const calculateTreeData = edges => {
     }
     return accu
   }, tree)
+
+  return result
 }
 
 //https://www.joshwcomeau.com/react/persisting-react-state-in-localstorage/
@@ -139,15 +146,14 @@ export const useStickyState = (key = "sticky", defaultValue = null) => {
   const [value, setValue] = useState(() => {
     const stickyValue = localStorage.getItem(key)
 
-    const result = JSON.parse(stickyValue) ?? defaultValue
-    console.log(result, "the state", defaultValue, stickyValue, "the key", key)
-    return result
+    return JSON.parse(stickyValue) ?? defaultValue
   })
 
   useEffect(() => {
     localStorage.setItem(key, JSON.stringify(value))
   }, [key, value])
 
+  // ooption to delete local cache
   const clearState = () => localStorage.removeItem(key)
 
   return [value, setValue, clearState]

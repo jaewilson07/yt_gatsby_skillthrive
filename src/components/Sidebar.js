@@ -19,7 +19,7 @@ export const Sidebar = ({ edges }) => {
 }
 
 export const RightSidebar = ({ items, title }) => {
-  console.log(items)
+  console.log(items, "items")
 
   return items && items.length > 0 ? (
     <SidebarWrapper>

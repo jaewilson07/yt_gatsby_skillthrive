@@ -12,6 +12,7 @@ export * from "./Pagination"
 export * from "./Layout"
 export * from "./PostContainer"
 export * from "./ListingContainer"
+export * from "./PageContainer"
 
 export * from "./Nav"
 export * from "./TableOfContents"

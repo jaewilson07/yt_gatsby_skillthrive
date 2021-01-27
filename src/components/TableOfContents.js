@@ -49,7 +49,7 @@ const renderItems = (items, level, activeId) => {
     <ol>
       {items.map(item => {
         const active = activeId === item.url.slice(1)
-        console.log(active, "active", "activeId")
+
         return (
           <ListItem key={item.url} level={level} to={item.url} active={active}>
             <Link href={item.url}>{item.title} </Link>

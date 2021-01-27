@@ -117,7 +117,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     actions.createPage({
       path: slug,
-      component: require.resolve("./src/templates/gitPost.js"),
+      component: require.resolve("./src/templates/post.js"),
       context: {
         id,
         slug,
